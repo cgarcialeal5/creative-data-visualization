@@ -402,7 +402,7 @@ lc_kde_plot <- plot(lc_kde, main = "Late Classic KDE")
 
 ## Adding the Basemap
 
-Now that we have kernel density estimations for each time period, we need to combine those estimations to the Tikal basemap. To combine the two maps (the Tikal basemap and the KDE for each period) I first prepared the Tikal map to work in `ggplot2{}`. I used the packages `terra{}`, `grid{}`, and `viridis{}` to prepare and combine the maps. I also converted the KDE raster files for each time period into data frames using `as.data.frame()`. The `{vidris}` package provided the color scale for these maps. Although, after speaking to Lydia and Toni in class, I tried filtering the the values to remove those smaller than 0.001 at various different stages (sf, simulated, kde, kde_df) I was not able to modify the visualization to make sure that the areas with no burials are left without color.
+Now that we have kernel density estimations for each time period, we need to combine those estimations to the Tikal basemap. To combine the two maps (the Tikal basemap and the KDE for each period) I first prepared the Tikal map by using the packages `terra{}` to prepare the Tikal map. Although, after speaking to Lydia and Toni in class, I tried filtering the the values to remove those smaller than 0.001 at various different stages (sf, simulated, kde, kde_df) I was not able to modify the visualization to make sure that the areas with no burials are left without color. However, I managed to do it using a function that combines the two plots using functions from the `{terra}` and the `{spatstat}` packages.
 
 This was the code to prepare the Tikal map.
 
@@ -418,108 +418,89 @@ Tikal_grob <- rasterGrob(
   interpolate = TRUE)
 ```
 
+The function to make the maps is:
+
+```{r}
+make_plot <- function(data, name) {
+  png(name, width = 1000, height = 800, res = 150)
+  
+  terra::plot(
+    Tikal,
+    col = grey.colors(100, start = 0, end = 1),
+    legend = FALSE
+  )
+
+  plot.im(
+    data,
+    add = TRUE,
+    col = viridis::viridis(100, alpha = seq(0, 1, length.out = 100)),
+    zlim = c(0, max(data$v))
+  )
+}
+```
+
 1.  Preclassic
 
 ```{r}
-pc_kde_df <- as.data.frame(pc_kde)
-
-pc_basemap_plot <- ggplot() +
-  annotation_custom(
-    Tikal_grob,
-    xmin = Tikal_extent[1], xmax = Tikal_extent[2],
-    ymin = Tikal_extent[3], ymax = Tikal_extent[4]
-  ) +
-  geom_raster(
-    data = pc_kde_df,
-    aes(x = x, y = y, fill = value, alpha = value),
-    alpha = 0.6
-  ) +
-  scale_fill_viridis_c(option = "D") +
-  scale_alpha_continuous(
-    range = c(0.00, 1.00),
-    limits = c(0.000, 0.005),
-    guide = "none"
-  ) +
-  coord_fixed() +
-  labs(title = "Preclassic Burial KDE") +
-  theme_minimal()
-
-print(pc_basemap_plot)
+make_plot(pc_kde, "Preclassic.png")
 ```
 
 2.  Early Classic
 
 ```{r}
-ec_kde_df <- as.data.frame(ec_kde)
-
-ec_basemap_plot <- ggplot() +
-  annotation_custom(
-    Tikal_grob,
-    xmin = Tikal_extent[1], xmax = Tikal_extent[2],
-    ymin = Tikal_extent[3], ymax = Tikal_extent[4]
-  ) +
-  geom_raster(
-    data = ec_kde_df,
-    aes(x = x, y = y, fill = value),
-    alpha = 0.6
-  ) +
-  scale_fill_viridis_c(option = "D") +
-  coord_fixed() +
-  labs(title = "Early Classic Burial KDE") +
-  theme_minimal()
-
-print(ec_basemap_plot)
+make_plot(ec_kde, "EarlyClassic.png")
 ```
 
 3.  Intermediate Classic
 
 ```{r}
-ic_kde_df <- as.data.frame(ic_kde)
-
-ic_basemap_plot <- ggplot() +
-  annotation_custom(
-    Tikal_grob,
-    xmin = Tikal_extent[1], xmax = Tikal_extent[2],
-    ymin = Tikal_extent[3], ymax = Tikal_extent[4]
-  ) +
-  geom_raster(
-    data = ic_kde_df,
-    aes(x = x, y = y, fill = value),
-    alpha = 0.6
-  ) +
-  scale_fill_viridis_c(option = "D") +
-  coord_fixed() +
-  labs(title = "Intermediate Classic Burial KDE") +
-  theme_minimal()
-
-print(ic_basemap_plot)
+make_plot(ic_kde, "IntermediateClassic.png")
 ```
 
 4.  Late Classic
 
 ```{r}
-lc_kde_df <- as.data.frame(lc_kde)
+lc_plot <- make_plot(lc_kde, "LateClassic.png")
+```
 
-lc_basemap_plot <- ggplot() +
-  annotation_custom(
-    Tikal_grob,
-    xmin = Tikal_extent[1], xmax = Tikal_extent[2],
-    ymin = Tikal_extent[3], ymax = Tikal_extent[4]
-  ) +
-  geom_raster(
-    data = lc_kde_df,
-    aes(x = x, y = y, fill = value),
-    alpha = 0.6
-  ) +
-  scale_fill_viridis_c(option = "D") +
-  coord_fixed() +
-  labs(title = "Late Classic Burial KDE") +
-  theme_minimal()
+## Time- Lapse Animation
+
+```{r}
+gifski(
+  png_files = c("Preclassic.png", "EarlyClassic.png", "IntermediateClassic.png", "LateClassic.png"),
+  gif_file = "TimeLapse_version2.gif",
+  width = 1000,
+  height = 800,
+  delay = 3
+)
+```
+
+In this version, the time lapse is not as smooth as the original one. However, the visualizations themselves look much better.
+
+## Time-Lapse: This is how I did it it before. Won't work now but leaving as example.
+
+-   Saving this example to show how I was generating the plots before I found the new way to generate the plots.
+
+```{r}
+lc_kde_df <- as.data.frame(lc_kde)  
+lc_basemap_plot <- ggplot() +   
+  annotation_custom(     
+    Tikal_grob,     
+    xmin = Tikal_extent[1], xmax = Tikal_extent[2],     
+    ymin = Tikal_extent[3], ymax = Tikal_extent[4]   
+    ) +   
+  geom_raster(     
+    data = lc_kde_df,     
+    aes(x = x, y = y, fill = value),     
+    alpha = 0.6   
+    ) +   
+  scale_fill_viridis_c(option = "D") +   
+  coord_fixed() +   
+  labs(title = "Late Classic Burial KDE") +   
+  theme_minimal()  
 
 print(lc_basemap_plot)
 ```
-
-## Time-Lapse
 
 Once I had the KDE for each time period, I was able to create the Time Lapse video. First, I labeled each KDE by assign them a new column for "time" that identifies each KDE's corresponding time period. Then I used `rbind()` to combine all KDE data frames into one frame, while also preserving all the rows and time labels. Once I had the new data frame with all the `kde_df` data, I recreated the same `ggplot2` plot that I did before, except this time I plotted all the KDEs at once by using the combined data frame. I also added the parameter for `transition_states()` from the `{gganimate}` package to animate the plot and move it between the time values. In this argument, I also edited the duration of each transition and the length of time each period remains static on the screen. In the final plot's title, I used `{closest_state}` to show the current period in the animation title.
 
