@@ -1,0 +1,554 @@
+---
+title: "Tikal Burial Timelapse"
+format: html
+editor: visual
+---
+
+# Introduction:
+
+This creative visualization project creates a time-lapse visualization of burial patterns through time at Tikal, one of the ancient Maya's most significant cities. Located in northern Guatemala's dense jungle within Tikal National Park, the site encompasses both monumental architecture and extensive non-elite residential zones (Tikal National Park, n.d.). While Tikal is renowned for its pyramids, palaces, and plazas, this project focuses specifically on the often-overlooked non-elite residential areas that provide insights into the daily lives of the city's general population (Jones & Satterhwaite, 1982; Tikal Reports, Numbers 1-11, 1986; Haviland & Becker, 2014; Shook, 1957).
+
+This visualization draws from the University of Pennsylvania's extensive archaeological investigations at Tikal, particularly Tikal Report 20A, which details non-elite residential areas and their associated burial practices. The primary data set combines the geo-referenced Carr Tikal Map from The Digital Archaeological Record with burial data from Tikal Report 20A (Tikal Reports, Numbers 1-11, 1986; Haviland & Becker, 2014). The visualization aims to reveal spatial and temporal patterns in Maya burial practices across Tikal's Residential zones.
+
+# The Data:
+
+## Tikal Map
+
+The map of Tikal was first published by Chritopher Carr in the Tikal Reports, Number 1-11 (1986). However, in 2013 he also published the geo-referenced version of the map in the open data source The Digital Archaeological Record (tDAR, 2013). The map was geo-referenced using the coordinate reference system WGS 84 / UTM Zone 16N (EPSG: 32616).
+
+The mapping project divided Tikal into a grid system covering 16 km^2^. The grid consists of 500m x 500m squares, creating a coordinate system where vertical axes are labeled with letters (A-H) and horizontal axes are labeled with numbers (1-8). Each square within the grid is identified by its number-letter combination (ex. 1A for northwest corner and 8H for southeast corner).
+
+## Burial Data
+
+The data from Tikal Report 20A contained information from 49 individuals excavated from different burials contexts in non-elite residential groups at Tikal, including three individuals (151A, 151B, 151C) sharing one grave. The individuals represent various different burial practices and time periods, from the Preclassic Period all the way to the Late Classic Period.
+
+The data structure consists of two main components: spatial data representing burial locations and attribute data detailing burial characteristics. For the spatial data, a point feature class was previously created in ArcGIS Pro to georeference each burial location within the site. The point-feature class was created using information available in the report, including quadrant, group, and structure. The resulting geo-spatial information was added to the data table as separate columns. As such, the data table includes the following variables:
+
+I.  Burial Number: Character variable. This is an identifier assigned to each individual by the University of Pennsylvania's project.
+II. Latitude: Factor variable. Burial location point representing "X" using the coordinate reference system WGS 84 / UTM Zone 16N (EPSG: 32616).
+III. Longitude: Factor variable. Burial location point representing "Y" using the coordinate reference system WGS 84 / UTM Zone 16N (EPSG: 32616).
+IV. Quadrangle: Character variable. This is the broadest representation of burial. The quadrants each represent four squares in the grid system.
+    i.  Camp: F4, F5, G4, G5
+    ii. Encanto: F2, F3, G2, G3
+    iii. Corriental: D6, D7, E6, E7
+    iv. Perdido: B6, B7, C6, C7
+    v.  Great Plaza: D4, D5, E4, E5
+    vi. Peripheral Squares: columns A and H, and rows 1 and 8.
+    vii. Temple IV: B4, B5, C4, C5
+    viii. Inscriptions: F6, F7, G6, G7
+    ix. NA: No information available
+V.  Structure: Character variable. Identifies the location of a burial to a specific structure within a group. This is the most specific information on burial location in the data. Structures are identified numerically within each square in the grid system. For example, Structure 6F-47 is the 47th structure identified in the square 6F.
+VI. Group: Character variable. Identifies the location of a burial to a specific group. Groups are identified numerically within each square in the grid system. For example, Group 6F-7 is the 7th group identified in the square 6F.
+VII. Age: Character variable. Identifies individuals as either adult or child. Also shows when no data is available.
+VIII. Sex: Character variable. Identifies individuals as either female or male. Also shows when no data is available. It is important to note that the original data differentiated between "probable" female/male and female/male. However, for the purpose of this project, they were combined.
+IX. Time Period: Individuals were dated to four distinct periods based on ceramics. The four periods are Preclassic, Early Classic, Intermediate Classic, and Late Classic.
+X.  Grave Type: Character variable. Identified the general archaeological context of the burial. There are six unique grave types, including formal grave with a roof, formal grave with walls and a roof, formal grave with walls only, informal graves, and chultuns (and similar graves to chultuns).
+XI. Location: Character variable. Identifies the position of the burial in relation to the structure. This includes categories to determine whether the burial was placed in alignment to the structure axis or not.
+XII. Head Orientation: Character variable. Identifies the cardinal direction of the position of the head.
+XIII. Body Position: Character variable. This variable was coded using the descriptions in Tikal Report 19. Codes are composed of a letter and a number to represent different body positions. The full list of explanations is available in the supplementary information in the main directory.
+XIV. Associated Material: Character variable. This variable was coded using the descriptions in Tikal Report 19. Codes are composed of a letter and a number to represent different body positions. The full list of explanations is available in the supplementary information in the main directory.
+
+# Methods:
+
+For this visualization, I will be going through a series of analysis to create various kernel density estimations before putting them all together as a time-lapse video. However, before beginning, I will clean the data to remove columns with no data, and re-naming columns and data values to remove spaces and spatial characters. Then I will filter the data to create four different data frames representing each time period.
+
+In this instance, the entire data set only contains information about 50 individuals which is a very small sample, especially when it is compared to the map of Tikal, which spans 16 km\^2. The sample data will get even smaller when filtered to contain only data from each specific time period. To work around this issue, the a larger data set will be simulated using a jitter. In addition, to make sure the maps are smooth and easier to interpret in the time lapse, rather than creating a heatmap, I will be creating Kernel Density Estimations (KDE). There will be four distinct KDEs representing burials in each time period. Those KDEs will be combined into a sequence with the Carr Tikal map as a basemap. I must point out that, because each step has to be replicated four times to create the maps for each time period, I will create a function for most steps that will allow me to streamline the process.
+
+## Before we start:
+
+#### Packages:
+
+```{r}
+#| eval: true
+#| output: false
+library(tidyverse)
+library(dplyr)
+library(gganimate)
+library(ggplot2)
+library(grid)
+library(janitor)
+library(raster)
+library(readr)
+library(sf)
+library(spatstat)
+library(spatstat.geom)
+library(spatstat.utils)
+library(stringr)
+library(terra)
+library(viridis)
+library(gifski)
+```
+
+#### Loading the Data:
+
+The data was loaded using the appropriate packages for each data type. I loaded the Tikal map (which is saved as a **.tif** file) using the `rast()` function from the `{terra}` package. I used `plot()` and `print()` to create a grey scale plot of the raster map and to display the raster's metadata. On the other hand, the data for the burials was loaded using the standard `read_csv()` function from the `readr{}` package.
+
+-   The Geo Referenced Map:
+
+```{r}
+Tikal <- rast("Data/MapTikal.tif")
+
+print(Tikal)      # Always check the coordinate system. Everything                        should match.
+Tika_plot <- plot(Tikal, 
+     col = gray.colors(100, start = 0, end = 1), 
+     main = "Georeferenced Map of Tikal")
+```
+
+-   The Burial Data:
+
+```{r}
+f <- "Data/BurialData_TR20.csv"
+burials <- read_csv(f, col_names = TRUE)
+
+head(burials)
+```
+
+## Data Wrangling:
+
+As with any project involving data, the first step is to clean the burial data. For this step, I will use a variety of packages and methods to edit the data table as a whole and to fix specific issues within certain columns. In terms of the packages, in this section I used `{janitor}` to clean column names, `{dplyir}` for data manipulation, and `{stringr}` for string manipulation. Those packages allowed me to achieve the following:
+
+1.  Remove column Associated Material 2, which had no data
+2.  Filter out empty rows
+3.  Clean column names by removing spaces, special characters, and converting to lowercase
+4.  Remove special characters and spaces in rows of data
+5.  Replace string that contained no information with `NA`
+6.  Standardize period names in a shorthand to streamline the workflow later
+7.  Standardize the "chultun" grave types by combining different variations into one category
+8.  Flip "latitude" and "longitude" columns names by flipping them and renaming them as "x" and "y"
+
+```{r}
+# Remove column with no data
+burials$`Associated Material 2` <- NULL
+
+burials <- burials %>%
+  # Removing empty rows
+  filter(
+    !if_all(
+      everything(),
+      ~ is.na(.) | . == ""
+    )
+  ) %>%
+  
+  # Cleaning column names
+  clean_names() %>%
+  
+  # Removing special characters and spaces from row data
+  mutate(
+    across(
+      where(is.character),
+      ~.x %>%
+        str_replace_all(" ", "") %>%
+        str_replace_all("[^A-Za-z0-9._-]", "")
+    )
+  ) %>%
+  
+  # Changing data with no information to `NA` 
+  mutate(
+    across(where(is.character), ~na_if(., "NoInformation")),
+    across(where(is.character), ~na_if(., "Other")),
+    across(where(is.character), ~na_if(., "Others"))
+  ) %>%
+  
+  # Changing the name of time period categories
+  mutate(time_period = case_when(
+    str_detect(tolower(time_period), "lateclassicimix-related") ~ "LC",
+    str_detect(tolower(time_period), "intermediateclassicik-related") ~ "IC",
+    str_detect(tolower(time_period), "preclassic") ~ "PC", 
+    str_detect(tolower(time_period), "earlyclassicmanik-related") ~ "EC",
+    TRUE ~ time_period
+  )) %>%
+  
+  # Combinging chultun and chultun-like grave types
+  mutate(grave_type = case_when(
+   str_detect(tolower(grave_type), "chultun") ~ "chultun",
+   TRUE ~ `grave_type`
+  )
+  ) %>%
+  
+  # Fix flipped coordinates
+  mutate(
+    x = latitude,
+    y = longitude
+  ) %>%
+  dplyr::select(-latitude, -longitude)
+  
+
+```
+
+## Filtering by Time Period
+
+In this step, I will use `filter()` from the package `{dplyr}` to create four different data frames. Each data frame will be named according to the time period it represents.
+
+1.  Preclassic Burials
+
+```{r}
+pc_burials <- burials %>%
+  filter(
+    time_period == "PC"
+  )
+
+head(pc_burials)
+```
+
+2.  Early Classic Burials
+
+```{r}
+ec_burials <- burials %>%
+  filter(
+    time_period == "EC"
+  )
+
+head(ec_burials)
+```
+
+3.  Intermediate Classic Burials
+
+```{r}
+ic_burials <- burials %>%
+  filter(
+    time_period == "IC"
+  )
+
+head(ic_burials)
+```
+
+4.  Late Classic Burials
+
+```{r}
+lc_burials <- burials %>%
+  filter(
+    time_period == "LC"
+  )
+
+head(lc_burials)
+```
+
+## Re-sampling the data
+
+As stated earlier, the size of this data set is quite small with less than 50 burials in total. Once it was separated into the different periods, this number shrank even more. Now, the four data sets range from 3 to 27 individuals. Considering that 3 individuals are not enough for a kernel density estimation (KDE) that spreads across 16 km\^2, I will have to resample the data before creating the KDE. While the `resample_heatmap()` function from the `geoSweepR{}` package can resample and create the heatmap at once, I do not wish to generate a random sample that shuffles all attributed associated to the burials. To avoid this, I will manually simulate a more realistic point cloud around the available data before applying a kernel density estimation (KDE) to create the visualization. By doing it this way, the jittered points maintain the attributes from the original point, and only the coordinates are generated. The new coordinates are generated by adding randomized changes in angle and distance from each original point in the data.
+
+The first step to create the KDE is to simulate a denser, but still realistic, point cloud around the available data. To make this easier to reproduce across the different time periods, I will do this by creating a function called `simulate_cloud()`. For this function I will need the data from the burials to be stored as sf objects. So once the function is written I will use the `{sf}` package to convert each period's data frame into a sf object before running the new sf object through the function.
+
+The function created for this part simulates new burial locations based on each period's data set, applying a random jitter to each point within a specified radius (30m). It uses the original locations as base and generates multiple points per burial. Each new point keeps the same attributes from the original data. The number of points that are generated depends on the number of rows that are available in the original data to ensure that the simulated data set contains around 10,000 points. As such, the first two lines of the function code specify the radius and the formula to calculate the number of points that need to be generated (`n_points`). The third variable defined in the function is created by using `{sf}` to extract the coordinates from the sf object (`coords`).
+
+Once those three variables are defined, the function begins the process to generate new points. This process involves identifying the 'x' and 'y' coordinates for each point using the `coords` variable and ensuring the attributes remain associated to the original point. Each point then goes through a process that randomizes an angle and distance (within the assigned radius) which is then added back to the original x and y values. The result of this addition is considered the newly generated point. This process is repeated for the each point the number of times specified by the `n_points` variable and is done on all points of the data set.
+
+The last two lines of the function code ensure that all the newly generated points are combined into one data frame, which is then converted back into an sf object. As such, the output of the function is an sf object that contains the simulated point cloud.
+
+```{r}
+simulate_cloud <- function(data){
+  radius <- 30
+  n_points <- floor(10000 / nrow(data))
+  
+  coords <- st_coordinates(data)
+  
+  sim_pt_list <- lapply(1:nrow(data), function(i) {
+    
+      # Original coordinates of each point
+      x <- coords[i, 1]
+      y <- coords[i, 2]
+      
+      # Original attributes associated to each point, except geometry
+      burial_data <- st_drop_geometry(data[i, drop = FALSE])
+      
+      # Randomize angle and distance to simulate the new points
+      angles <- runif(n_points, 0, 2 * pi)
+      distances <- runif(n_points, 0, 2 * radius)
+      
+      # Calculate the new simulated coordinates
+      x_new <- x + distances * cos(angles)
+      y_new <- y + distances * sin(angles)
+      
+      # Repeat burial data for each new point without shuffling
+      sim_data <- cbind(burial_data[rep(1, n_points), ], x = x_new, y = y_new)
+      
+      return(sim_data)
+    })
+    
+  # Combine all simulated points into one data frame
+  sim_pts <- do.call(rbind, sim_pt_list)
+  
+  # Convert data frame into an sf object with the correct CRS
+  sim_sf <- st_as_sf(sim_pts, coords = c("x", "y"), crs = st_crs(data))
+  return(sim_sf)
+}
+```
+
+1.  Preclassic Burials
+
+```{r}
+# Converting to sf object
+pc_sf <- st_as_sf(
+  pc_burials, 
+  coords = c("x", "y"), 
+  crs = 32616)
+
+# Simulating new points
+pc_simulated <- simulate_cloud(pc_sf)
+```
+
+2.  Early Classic Burials
+
+```{r}
+# Converting to sf object
+ec_sf <- st_as_sf(
+  ec_burials, 
+  coords = c("x", "y"), 
+  crs = 32616)
+
+# Simulating new points
+ec_simulated <- simulate_cloud(ec_sf)
+```
+
+3.  Intermediate Classic Burials
+
+```{r}
+# Converting to sf object
+ic_sf <- st_as_sf(
+  ic_burials, 
+  coords = c("x", "y"), 
+  crs = 32616)
+
+# Simulating new points
+ic_simulated <- simulate_cloud(ic_sf)
+```
+
+4.  Late Classic Burials
+
+```{r}
+# Converting to sf object
+lc_sf <- st_as_sf(
+  lc_burials, 
+  coords = c("x", "y"), 
+  crs = 32616)
+
+# Simulating new points
+lc_simulated <- simulate_cloud(lc_sf)
+```
+
+All four data sets containing burial information for individual periods were transformed from data sets to sf objects. The newly created sf object were then run through the function outlined above. At the end of this step, there are four new data sets containing around 10,000 simulated data points.
+
+```{r}
+summary(pc_simulated)
+summary(ec_simulated)
+summary(ic_simulated)
+summary(lc_simulated)
+```
+
+## Kernel Density Estimation
+
+The previous step resulted in four `sf` objects with around 10,000 data rows per object. To create the kernel density estimation for each of the four data frames, I created another function. This function uses the `spatstat{}` package, the `{sf}` package, and the `terra{}` package to produce a KDE. The function is called `kde()` and has parameters for the data, the extent template, and sigma. The data will correspond to the simulated data from each time period, the extent template will be set to the Tikal map's extent, and sigma can vary to enhance visualization, but will be kept at 300 for this exercise.
+
+The function begins by using the `{terra}` package to extract the extent from the `ext_template=` parameter and saving it as `Tikalext`. This will serve to define the bounding box for the KDE. The bounding box is created using the `{spatstat.geom}` package. The function `owin()` from that package creates a rectangular window that uses `Tikalext` to define the max and min bounds for the x and y axis. These first steps define the area where the KDE will be performed.
+
+The second portion of the function begins by extracting the coordinates from the data and saving them as a matrix called `coordsA`. Those coordinates are then converted into a planar point pattern object (ppp) from the `{spatstat}` package. The last step of the function calculates the kernel density estimation using the `density()` function from the `{spatstat}` package, which is returned as the final output of the function.
+
+The simulated point data set for each time period was run through this function and then plot using `{base}` plotting to verify its success.
+
+```{r}
+kde <- function(data, ext_template, sigma){
+  
+  Tikalext <- ext(ext_template)
+  
+  windowA <- owin(
+    xrange = c(Tikalext[1], Tikalext[2]),
+    yrange = c(Tikalext[3], Tikalext[4]))
+  
+  coordsA <- st_coordinates(data)
+  
+  ppp_data <- ppp(x = coordsA[,1], y = coordsA[,2], window = windowA)
+  
+  kde_data <- density(ppp_data, sigma = sigma)
+  
+  return(kde_data)
+}
+
+```
+
+1.  Preclassic KDE
+
+```{r}
+pc_kde <- kde(pc_simulated, ext_template = Tikal, sigma = 300)
+
+#filter pc_kde$v to remove values that are between 0-0.001 <- I tried doing this but it still looked the same. 
+
+pc_kde_plot <- plot(pc_kde, main = "Preclassic KDE")
+
+```
+
+2.  Early Classic KDE
+
+```{r}
+ec_kde <- kde(ec_simulated, ext_template = Tikal, sigma = 300)
+
+ec_kde_plot <- plot(ec_kde, main = "Early Classic KDE")
+```
+
+3.  Intermediate Classic KDE
+
+```{r}
+ic_kde <- kde(ic_simulated, ext_template = Tikal, sigma = 300)
+
+ic_kde_plot <- plot(ic_kde, main = "Intermediate Classic KDE")
+```
+
+4.  Late Classic KDE
+
+```{r}
+lc_kde <- kde(lc_simulated, ext_template = Tikal, sigma = 300)
+
+lc_kde_plot <- plot(lc_kde, main = "Late Classic KDE")
+```
+
+## Adding the Basemap
+
+Now that we have kernel density estimations for each time period, we need to combine those estimations to the Tikal basemap. To combine the two maps (the Tikal basemap and the KDE for each period) I first prepared the Tikal map to work in `ggplot2{}`. I used the packages `terra{}`, `grid{}`, and `viridis{}` to prepare and combine the maps. I also converted the KDE raster files for each time period into data frames using `as.data.frame()`. The `{vidris}` package provided the color scale for these maps. Although, after speaking to Lydia and Toni in class, I tried filtering the the values to remove those smaller than 0.001 at various different stages (sf, simulated, kde, kde_df) I was not able to modify the visualization to make sure that the areas with no burials are left without color.
+
+This was the code to prepare the Tikal map.
+
+```{r}
+Tikal_matrix <- as.raster(Tikal[[1]])
+
+Tikal_extent <- ext(Tikal)
+
+Tikal_grob <- rasterGrob(
+  Tikal_matrix,
+  width = unit(1, "npc"),
+  height = unit(1, "npc"),
+  interpolate = TRUE)
+```
+
+1.  Preclassic
+
+```{r}
+pc_kde_df <- as.data.frame(pc_kde)
+
+pc_basemap_plot <- ggplot() +
+  annotation_custom(
+    Tikal_grob,
+    xmin = Tikal_extent[1], xmax = Tikal_extent[2],
+    ymin = Tikal_extent[3], ymax = Tikal_extent[4]
+  ) +
+  geom_raster(
+    data = pc_kde_df,
+    aes(x = x, y = y, fill = value, alpha = value),
+    alpha = 0.6
+  ) +
+  scale_fill_viridis_c(option = "D") +
+  scale_alpha_continuous(
+    range = c(0.00, 1.00),
+    limits = c(0.000, 0.005),
+    guide = "none"
+  ) +
+  coord_fixed() +
+  labs(title = "Preclassic Burial KDE") +
+  theme_minimal()
+
+print(pc_basemap_plot)
+```
+
+2.  Early Classic
+
+```{r}
+ec_kde_df <- as.data.frame(ec_kde)
+
+ec_basemap_plot <- ggplot() +
+  annotation_custom(
+    Tikal_grob,
+    xmin = Tikal_extent[1], xmax = Tikal_extent[2],
+    ymin = Tikal_extent[3], ymax = Tikal_extent[4]
+  ) +
+  geom_raster(
+    data = ec_kde_df,
+    aes(x = x, y = y, fill = value),
+    alpha = 0.6
+  ) +
+  scale_fill_viridis_c(option = "D") +
+  coord_fixed() +
+  labs(title = "Early Classic Burial KDE") +
+  theme_minimal()
+
+print(ec_basemap_plot)
+```
+
+3.  Intermediate Classic
+
+```{r}
+ic_kde_df <- as.data.frame(ic_kde)
+
+ic_basemap_plot <- ggplot() +
+  annotation_custom(
+    Tikal_grob,
+    xmin = Tikal_extent[1], xmax = Tikal_extent[2],
+    ymin = Tikal_extent[3], ymax = Tikal_extent[4]
+  ) +
+  geom_raster(
+    data = ic_kde_df,
+    aes(x = x, y = y, fill = value),
+    alpha = 0.6
+  ) +
+  scale_fill_viridis_c(option = "D") +
+  coord_fixed() +
+  labs(title = "Intermediate Classic Burial KDE") +
+  theme_minimal()
+
+print(ic_basemap_plot)
+```
+
+4.  Late Classic
+
+```{r}
+lc_kde_df <- as.data.frame(lc_kde)
+
+lc_basemap_plot <- ggplot() +
+  annotation_custom(
+    Tikal_grob,
+    xmin = Tikal_extent[1], xmax = Tikal_extent[2],
+    ymin = Tikal_extent[3], ymax = Tikal_extent[4]
+  ) +
+  geom_raster(
+    data = lc_kde_df,
+    aes(x = x, y = y, fill = value),
+    alpha = 0.6
+  ) +
+  scale_fill_viridis_c(option = "D") +
+  coord_fixed() +
+  labs(title = "Late Classic Burial KDE") +
+  theme_minimal()
+
+print(lc_basemap_plot)
+```
+
+## Time-Lapse
+
+Once I had the KDE for each time period, I was able to create the Time Lapse video. First, I labeled each KDE by assign them a new column for "time" that identifies each KDE's corresponding time period. Then I used `rbind()` to combine all KDE data frames into one frame, while also preserving all the rows and time labels. Once I had the new data frame with all the `kde_df` data, I recreated the same `ggplot2` plot that I did before, except this time I plotted all the KDEs at once by using the combined data frame. I also added the parameter for `transition_states()` from the `{gganimate}` package to animate the plot and move it between the time values. In this argument, I also edited the duration of each transition and the length of time each period remains static on the screen. In the final plot's title, I used `{closest_state}` to show the current period in the animation title.
+
+Lastly, I used the `{gifski}` package to animate the plot and render the time lapse as a **.gif** file. The `animate()` function from this package generates the frames and animation from the plot and allows me to edit details such as the length of the animation, the frames per second, and the output dimensions. The fully rendered time lapse was saved using the same package. The final **.gif** file can be found in the main directory of this project.
+
+```{r}
+pc_kde_df$time <- "Preclassic"
+ec_kde_df$time <- "Early Classic"
+ic_kde_df$time <- "Intermediate Classic"
+lc_kde_df$time <- "Late Classic"
+
+all_kde_df <- rbind(pc_kde_df, ec_kde_df, ic_kde_df, lc_kde_df)
+
+
+
+Time_Lapse <- ggplot() +
+  annotation_custom(
+    Tikal_grob,
+    xmin = Tikal_extent[1], xmax = Tikal_extent[2],
+    ymin = Tikal_extent[3], ymax = Tikal_extent[4]
+  ) +
+  geom_raster(data = all_kde_df, aes(x = x, y = y, fill = value), alpha = 0.6) +
+  scale_fill_viridis_c(option = "D") +
+  transition_states(time, transition_length = 2, state_length = 1) +  
+  labs(title = "Burial Density in Tikal Over Time: {closest_state}") +
+  coord_fixed() +
+  theme_minimal()
+
+animate(Time_Lapse, duration = 20, fps = 10, width = 800, height = 600, renderer = gifski_renderer())
+
+anim_save("TikaBurial_TimeLapse.gif")
+```

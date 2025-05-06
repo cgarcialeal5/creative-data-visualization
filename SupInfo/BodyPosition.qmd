@@ -1,0 +1,33 @@
+---
+title: "Body Position Codes"
+format: html
+editor: visual
+---
+
+A1: Individuals found in this position had both arms and legs flexed, with their feet together. However, there is a slight variation in the position of the wrist, as three burials in this category were found with their wrists apart and three others were found with their wrists together. The most variation within this category is on the way the individuals were lying; one on its left side, two on their right side, one was supine, two were prone, and one was seated.
+
+A2: Individuals in this position were found with their legs completely flexed and their feet together. On the other hand, their arms were extended, and their wrists were together. Two of the individuals were found lying in the supine position, while one individual was lying on their left side, and one was seated.
+
+A7: The only information available for this category is that the individual’s legs were completely flexed.
+
+B1: Individuals in this position were found with their legs partially flexed and both of their arms flexed. All the individuals had their feet together, and two out of three individuals also had their hands together. Two of the individuals in this group were lying on their right side, and one was lying in the supine position.
+
+B2: Individuals in this group with their legs partially flexed and their feet together. Only one of their arms was flexed and both individuals had their wrists apart. They were both found lying on their right side.
+
+B3: Individuals in this category were found with their legs partially flexed and their feet together. On the other hand, their arms were extended and there was no pattern to the position of the wrists, some had their wrists together and others apart. There was also great variation in the position of the body, some were found lying on their left side, one was lying in the supine position, and another was lying in the prone position.
+
+B?: Very similar to the category above. The main difference is that half of the individuals in this category are missing information and there is a slight difference in the variability of the position of the remains. In this category the individuals were found lying on either side or in the supine position.
+
+C2: Individuals in this category were found with their legs partially extended and their feet together. In terms of their upper extremities, the individuals had one arm flexed and their wrists were apart. They were either lying on their left side or on the supine position.
+
+C3: Both individuals in this category had their lower limbs partially extended and their feet together. Their arms were flexed with their wrists together. The individuals were lying either on their right side or in the supine position.
+
+C4: The individual in this category also had their legs partially extended and their feet together. Their arms were flexed with their hands over their heads and their elbows apart. They were lying in the supine position.
+
+D1: The lower extremities of individuals in this category were completely extended and their feet were together. Their arms were also extended. Although not all individuals have information about their wrists, two were found with their wrists apart and one was found with their wrists together. They were all found lying in the supine position.
+
+D2: Individuals in this category were found with their legs completely extended and their arms flexed.
+
+Two-stage: No information
+
+Problematical: No information

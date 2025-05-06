@@ -1,0 +1,1208 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.43">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Tikal Burial Timelapse</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="CreativeVisualizationProject_files/libs/clipboard/clipboard.min.js"></script>
+<script src="CreativeVisualizationProject_files/libs/quarto-html/quarto.js"></script>
+<script src="CreativeVisualizationProject_files/libs/quarto-html/popper.min.js"></script>
+<script src="CreativeVisualizationProject_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="CreativeVisualizationProject_files/libs/quarto-html/anchor.min.js"></script>
+<link href="CreativeVisualizationProject_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="CreativeVisualizationProject_files/libs/quarto-html/quarto-syntax-highlighting-d4d76bf8491c20bad77d141916dc28e1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="CreativeVisualizationProject_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="CreativeVisualizationProject_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="CreativeVisualizationProject_files/libs/bootstrap/bootstrap-1bc8a17f135ab3d594c857e9f48e611b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Tikal Burial Timelapse</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="introduction" class="level1">
+<h1>Introduction:</h1>
+<p>This creative visualization project creates a time-lapse visualization of burial patterns through time at Tikal, one of the ancient Maya’s most significant cities. Located in northern Guatemala’s dense jungle within Tikal National Park, the site encompasses both monumental architecture and extensive non-elite residential zones (Tikal National Park, n.d.). While Tikal is renowned for its pyramids, palaces, and plazas, this project focuses specifically on the often-overlooked non-elite residential areas that provide insights into the daily lives of the city’s general population (Jones &amp; Satterhwaite, 1982; Tikal Reports, Numbers 1-11, 1986; Haviland &amp; Becker, 2014; Shook, 1957).</p>
+<p>This visualization draws from the University of Pennsylvania’s extensive archaeological investigations at Tikal, particularly Tikal Report 20A, which details non-elite residential areas and their associated burial practices. The primary data set combines the geo-referenced Carr Tikal Map from The Digital Archaeological Record with burial data from Tikal Report 20A (Tikal Reports, Numbers 1-11, 1986; Haviland &amp; Becker, 2014). The visualization aims to reveal spatial and temporal patterns in Maya burial practices across Tikal’s Residential zones.</p>
+</section>
+<section id="the-data" class="level1">
+<h1>The Data:</h1>
+<section id="tikal-map" class="level2">
+<h2 class="anchored" data-anchor-id="tikal-map">Tikal Map</h2>
+<p>The map of Tikal was first published by Chritopher Carr in the Tikal Reports, Number 1-11 (1986). However, in 2013 he also published the geo-referenced version of the map in the open data source The Digital Archaeological Record (tDAR, 2013). The map was geo-referenced using the coordinate reference system WGS 84 / UTM Zone 16N (EPSG: 32616).</p>
+<p>The mapping project divided Tikal into a grid system covering 16 km<sup>2</sup>. The grid consists of 500m x 500m squares, creating a coordinate system where vertical axes are labeled with letters (A-H) and horizontal axes are labeled with numbers (1-8). Each square within the grid is identified by its number-letter combination (ex. 1A for northwest corner and 8H for southeast corner).</p>
+</section>
+<section id="burial-data" class="level2">
+<h2 class="anchored" data-anchor-id="burial-data">Burial Data</h2>
+<p>The data from Tikal Report 20A contained information from 49 individuals excavated from different burials contexts in non-elite residential groups at Tikal, including three individuals (151A, 151B, 151C) sharing one grave. The individuals represent various different burial practices and time periods, from the Preclassic Period all the way to the Late Classic Period.</p>
+<p>The data structure consists of two main components: spatial data representing burial locations and attribute data detailing burial characteristics. For the spatial data, a point feature class was previously created in ArcGIS Pro to georeference each burial location within the site. The point-feature class was created using information available in the report, including quadrant, group, and structure. The resulting geo-spatial information was added to the data table as separate columns. As such, the data table includes the following variables:</p>
+<ol type="I">
+<li>Burial Number: Character variable. This is an identifier assigned to each individual by the University of Pennsylvania’s project.</li>
+<li>Latitude: Factor variable. Burial location point representing “X” using the coordinate reference system WGS 84 / UTM Zone 16N (EPSG: 32616).</li>
+<li>Longitude: Factor variable. Burial location point representing “Y” using the coordinate reference system WGS 84 / UTM Zone 16N (EPSG: 32616).</li>
+<li>Quadrangle: Character variable. This is the broadest representation of burial. The quadrants each represent four squares in the grid system.
+<ol type="i">
+<li>Camp: F4, F5, G4, G5</li>
+<li>Encanto: F2, F3, G2, G3</li>
+<li>Corriental: D6, D7, E6, E7</li>
+<li>Perdido: B6, B7, C6, C7</li>
+<li>Great Plaza: D4, D5, E4, E5</li>
+<li>Peripheral Squares: columns A and H, and rows 1 and 8.</li>
+<li>Temple IV: B4, B5, C4, C5</li>
+<li>Inscriptions: F6, F7, G6, G7</li>
+<li>NA: No information available</li>
+</ol></li>
+<li>Structure: Character variable. Identifies the location of a burial to a specific structure within a group. This is the most specific information on burial location in the data. Structures are identified numerically within each square in the grid system. For example, Structure 6F-47 is the 47th structure identified in the square 6F.</li>
+<li>Group: Character variable. Identifies the location of a burial to a specific group. Groups are identified numerically within each square in the grid system. For example, Group 6F-7 is the 7th group identified in the square 6F.</li>
+<li>Age: Character variable. Identifies individuals as either adult or child. Also shows when no data is available.</li>
+<li>Sex: Character variable. Identifies individuals as either female or male. Also shows when no data is available. It is important to note that the original data differentiated between “probable” female/male and female/male. However, for the purpose of this project, they were combined.</li>
+<li>Time Period: Individuals were dated to four distinct periods based on ceramics. The four periods are Preclassic, Early Classic, Intermediate Classic, and Late Classic.</li>
+<li>Grave Type: Character variable. Identified the general archaeological context of the burial. There are six unique grave types, including formal grave with a roof, formal grave with walls and a roof, formal grave with walls only, informal graves, and chultuns (and similar graves to chultuns).</li>
+<li>Location: Character variable. Identifies the position of the burial in relation to the structure. This includes categories to determine whether the burial was placed in alignment to the structure axis or not.</li>
+<li>Head Orientation: Character variable. Identifies the cardinal direction of the position of the head.</li>
+<li>Body Position: Character variable. This variable was coded using the descriptions in Tikal Report 19. Codes are composed of a letter and a number to represent different body positions. The full list of explanations is available in the supplementary information in the main directory.</li>
+<li>Associated Material: Character variable. This variable was coded using the descriptions in Tikal Report 19. Codes are composed of a letter and a number to represent different body positions. The full list of explanations is available in the supplementary information in the main directory.</li>
+</ol>
+</section>
+</section>
+<section id="methods" class="level1">
+<h1>Methods:</h1>
+<p>For this visualization, I will be going through a series of analysis to create various kernel density estimations before putting them all together as a time-lapse video. However, before beginning, I will clean the data to remove columns with no data, and re-naming columns and data values to remove spaces and spatial characters. Then I will filter the data to create four different data frames representing each time period.</p>
+<p>In this instance, the entire data set only contains information about 50 individuals which is a very small sample, especially when it is compared to the map of Tikal, which spans 16 km^2. The sample data will get even smaller when filtered to contain only data from each specific time period. To work around this issue, the a larger data set will be simulated using a jitter. In addition, to make sure the maps are smooth and easier to interpret in the time lapse, rather than creating a heatmap, I will be creating Kernel Density Estimations (KDE). There will be four distinct KDEs representing burials in each time period. Those KDEs will be combined into a sequence with the Carr Tikal map as a basemap.</p>
+<section id="before-we-start" class="level2">
+<h2 class="anchored" data-anchor-id="before-we-start">Before we start:</h2>
+<section id="packages" class="level4">
+<h4 class="anchored" data-anchor-id="packages">Packages:</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(raster)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggspatial)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(viridis)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(grid)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(terra)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(patchwork)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(geoSweepR)</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(janitor)</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(stringr)</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(spatstat)</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(spatstat.geom)</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(spatstat.utils)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="loading-the-data" class="level4">
+<h4 class="anchored" data-anchor-id="loading-the-data">Loading the Data:</h4>
+<ul>
+<li>The Geo Referenced Map:</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>Tikal <span class="ot">&lt;-</span> <span class="fu">rast</span>(<span class="st">"Data/MapTikal.tif"</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(Tikal)      <span class="co"># Always check the coordinate system. Everything                        should match.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>class       : SpatRaster 
+dimensions  : 9413, 8452, 1  (nrow, ncol, nlyr)
+resolution  : 0.5965274, 0.5813768  (x, y)
+extent      : 218638.4, 223680.3, 1903217, 1908690  (xmin, xmax, ymin, ymax)
+coord. ref. : WGS 84 / UTM zone 16N (EPSG:32616) 
+source      : MapTikal.tif 
+name        : MapTikal </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>Tika_plot <span class="ot">&lt;-</span> <span class="fu">plot</span>(Tikal, </span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">col =</span> <span class="fu">gray.colors</span>(<span class="dv">100</span>, <span class="at">start =</span> <span class="dv">0</span>, <span class="at">end =</span> <span class="dv">1</span>), </span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">"Georeferenced Map of Tikal"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="CreativeVisualizationProject_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li>The Burial Data:</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="st">"Data/BurialData_TR20.csv"</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>burials <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(f, <span class="at">col_names =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Rows: 53 Columns: 15
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr (13): Burial, Quadrangle, Structure, Group, Age, Sex, Time Period, Grave...
+dbl  (2): latitude, longitude
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(burials)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 15
+  Burial latitude longitude Quadrangle Structure Group Age   Sex   `Time Period`
+  &lt;chr&gt;     &lt;dbl&gt;     &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;     &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;        
+1 45      222133.  1906431. Camp       Str. 4F-… 4F-6  Adult Male  Late Classic…
+2 49      222511.  1907072. Encanto    Str. 2G-… 2G-1  Adult Male  Late Classic…
+3 50      222510.  1907071. Encanto    Str. 2G-… 2G-1  Adult Male  Late Classic…
+4 52      222510.  1907070. Encanto    Str. 2G-… 2G-1  Adult Male  Late Classic…
+5 53      222510.  1907069. Encanto    Str. 2G-… 2G-1  Adult Unkn… Late Classic…
+6 54      222510.  1907068. Encanto    Str. 2G-… 2G-1  Adult Unkn… Intermediate…
+# ℹ 6 more variables: `Grave Type` &lt;chr&gt;, Location &lt;chr&gt;,
+#   `Head Orientation` &lt;chr&gt;, `Body Position` &lt;chr&gt;,
+#   `Associated Material 1` &lt;chr&gt;, `Associated Material 2` &lt;chr&gt;</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="data-wrangling" class="level2">
+<h2 class="anchored" data-anchor-id="data-wrangling">Data Wrangling:</h2>
+<p>As with any project involving data, the first step is to clean the burial data. For this step, I will use a variety of packages and methods to edit the data table as a whole and to fix specific issues within certain columns. In terms of the entire data set, data wrangling involves cleaning the names of the columns to avoid special characters and spaces using the package <code>{janitor}</code>, cleaning the data in each row using the packages <code>{dplyir}</code> and <code>{stringr}</code>, and changing values that say “no information,” “Unkown,” or “Other” to <code>NA</code> values that R can recognize. Lastly, I will delete empty rows with no data.</p>
+<p>In terms of data wrangling specific columns, I will rename the data in “time_period” to shorter abbreviations of each time period. In the column “grave_type” I will also combine “chultun” and “chultun-like” into one category. The last thing I will do is remove the column “associated_materials_2” as only one row has data in that column.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Remove column with no data</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>burials<span class="sc">$</span><span class="st">`</span><span class="at">Associated Material 2</span><span class="st">`</span> <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>burials <span class="ot">&lt;-</span> burials <span class="sc">%&gt;%</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Removing empty rows</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>    <span class="sc">!</span><span class="fu">if_all</span>(</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>      <span class="fu">everything</span>(),</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>      <span class="sc">~</span> <span class="fu">is.na</span>(.) <span class="sc">|</span> . <span class="sc">==</span> <span class="st">""</span></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Cleaning column names</span></span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">clean_names</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Removing special characters and spaces from row data</span></span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>    <span class="fu">across</span>(</span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a>      <span class="fu">where</span>(is.character),</span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a>      <span class="sc">~</span>.x <span class="sc">%&gt;%</span></span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a>        <span class="fu">str_replace_all</span>(<span class="st">" "</span>, <span class="st">""</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a>        <span class="fu">str_replace_all</span>(<span class="st">"[^A-Za-z0-9._-]"</span>, <span class="st">""</span>)</span>
+<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb9-26"><a href="#cb9-26" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Changing data with no information to `NA` </span></span>
+<span id="cb9-27"><a href="#cb9-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb9-28"><a href="#cb9-28" aria-hidden="true" tabindex="-1"></a>    <span class="fu">across</span>(<span class="fu">where</span>(is.character), <span class="sc">~</span><span class="fu">na_if</span>(., <span class="st">"NoInformation"</span>)),</span>
+<span id="cb9-29"><a href="#cb9-29" aria-hidden="true" tabindex="-1"></a>    <span class="fu">across</span>(<span class="fu">where</span>(is.character), <span class="sc">~</span><span class="fu">na_if</span>(., <span class="st">"Other"</span>)),</span>
+<span id="cb9-30"><a href="#cb9-30" aria-hidden="true" tabindex="-1"></a>    <span class="fu">across</span>(<span class="fu">where</span>(is.character), <span class="sc">~</span><span class="fu">na_if</span>(., <span class="st">"Others"</span>))</span>
+<span id="cb9-31"><a href="#cb9-31" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb9-32"><a href="#cb9-32" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb9-33"><a href="#cb9-33" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Changing the name of time period categories</span></span>
+<span id="cb9-34"><a href="#cb9-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">time_period =</span> <span class="fu">case_when</span>(</span>
+<span id="cb9-35"><a href="#cb9-35" aria-hidden="true" tabindex="-1"></a>    <span class="fu">str_detect</span>(<span class="fu">tolower</span>(time_period), <span class="st">"lateclassicimix-related"</span>) <span class="sc">~</span> <span class="st">"LC"</span>,</span>
+<span id="cb9-36"><a href="#cb9-36" aria-hidden="true" tabindex="-1"></a>    <span class="fu">str_detect</span>(<span class="fu">tolower</span>(time_period), <span class="st">"intermediateclassicik-related"</span>) <span class="sc">~</span> <span class="st">"IC"</span>,</span>
+<span id="cb9-37"><a href="#cb9-37" aria-hidden="true" tabindex="-1"></a>    <span class="fu">str_detect</span>(<span class="fu">tolower</span>(time_period), <span class="st">"preclassic"</span>) <span class="sc">~</span> <span class="st">"PC"</span>, </span>
+<span id="cb9-38"><a href="#cb9-38" aria-hidden="true" tabindex="-1"></a>    <span class="fu">str_detect</span>(<span class="fu">tolower</span>(time_period), <span class="st">"earlyclassicmanik-related"</span>) <span class="sc">~</span> <span class="st">"EC"</span>,</span>
+<span id="cb9-39"><a href="#cb9-39" aria-hidden="true" tabindex="-1"></a>    <span class="cn">TRUE</span> <span class="sc">~</span> time_period</span>
+<span id="cb9-40"><a href="#cb9-40" aria-hidden="true" tabindex="-1"></a>  )) <span class="sc">%&gt;%</span></span>
+<span id="cb9-41"><a href="#cb9-41" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb9-42"><a href="#cb9-42" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Combinging chultun and chultun-like grave types</span></span>
+<span id="cb9-43"><a href="#cb9-43" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">grave_type =</span> <span class="fu">case_when</span>(</span>
+<span id="cb9-44"><a href="#cb9-44" aria-hidden="true" tabindex="-1"></a>   <span class="fu">str_detect</span>(<span class="fu">tolower</span>(grave_type), <span class="st">"chultun"</span>) <span class="sc">~</span> <span class="st">"chultun"</span>,</span>
+<span id="cb9-45"><a href="#cb9-45" aria-hidden="true" tabindex="-1"></a>   <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">`</span><span class="at">grave_type</span><span class="st">`</span></span>
+<span id="cb9-46"><a href="#cb9-46" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb9-47"><a href="#cb9-47" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb9-48"><a href="#cb9-48" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb9-49"><a href="#cb9-49" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Fix flipped coordinates</span></span>
+<span id="cb9-50"><a href="#cb9-50" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb9-51"><a href="#cb9-51" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> latitude,</span>
+<span id="cb9-52"><a href="#cb9-52" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> longitude</span>
+<span id="cb9-53"><a href="#cb9-53" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb9-54"><a href="#cb9-54" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(<span class="sc">-</span>latitude, <span class="sc">-</span>longitude)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="filtering-by-time-period" class="level2">
+<h2 class="anchored" data-anchor-id="filtering-by-time-period">Filtering by Time Period</h2>
+<p>In this step, I will use <code>filter()</code> to create four different data frames. Each data frame will be named according to the time period it represents.</p>
+<ol type="1">
+<li>Preclassic Burials</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>pc_burials <span class="ot">&lt;-</span> burials <span class="sc">%&gt;%</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    time_period <span class="sc">==</span> <span class="st">"PC"</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(pc_burials)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 14
+  burial quadrangle structure  group age   sex   time_period grave_type location
+  &lt;chr&gt;  &lt;chr&gt;      &lt;chr&gt;      &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;       &lt;chr&gt;      &lt;chr&gt;   
+1 62     Encanto    Str.2G-2   &lt;NA&gt;  Adult Male  PC          chultun    Structu…
+2 128    Corriental Str.6E-Su… 6E-1  Adult Fema… PC          Formal-wa… Structu…
+3 158    Camp       Plat.5F-1  5F-1  Adult Male  PC          Formal-wa… &lt;NA&gt;    
+# ℹ 5 more variables: head_orientation &lt;chr&gt;, body_position &lt;chr&gt;,
+#   associated_material_1 &lt;chr&gt;, x &lt;dbl&gt;, y &lt;dbl&gt;</code></pre>
+</div>
+</div>
+<ol start="2" type="1">
+<li>Early Classic Burials</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>ec_burials <span class="ot">&lt;-</span> burials <span class="sc">%&gt;%</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    time_period <span class="sc">==</span> <span class="st">"EC"</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(ec_burials)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 14
+  burial quadrangle structure  group age   sex   time_period grave_type location
+  &lt;chr&gt;  &lt;chr&gt;      &lt;chr&gt;      &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;       &lt;chr&gt;      &lt;chr&gt;   
+1 64     Encanto    Str.2G-61  &lt;NA&gt;  Adult Unkn… EC          Informal   Structu…
+2 138    Corriental Plat.6E-1  6E-1  Child Unkn… EC          Formal-ro… &lt;NA&gt;    
+3 146    Perdido    Str.6C-45  6C-1  Adult Male  EC          Informal   Structu…
+4 152    Corriental Str.6E-26  6E-1  Adult Fema… EC          &lt;NA&gt;       &lt;NA&gt;    
+5 153    Corriental Str.6E-Su… 6E-1  Adult Male  EC          Formal-ro… Structu…
+6 169    GreatPlaza Str.5D-7   5D-1  Adult Male  EC          chultun    Structu…
+# ℹ 5 more variables: head_orientation &lt;chr&gt;, body_position &lt;chr&gt;,
+#   associated_material_1 &lt;chr&gt;, x &lt;dbl&gt;, y &lt;dbl&gt;</code></pre>
+</div>
+</div>
+<ol start="3" type="1">
+<li>Intermediate Classic Burials</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>ic_burials <span class="ot">&lt;-</span> burials <span class="sc">%&gt;%</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    time_period <span class="sc">==</span> <span class="st">"IC"</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(ic_burials)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 14
+  burial quadrangle structure group age   sex    time_period grave_type location
+  &lt;chr&gt;  &lt;chr&gt;      &lt;chr&gt;     &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;  &lt;chr&gt;       &lt;chr&gt;      &lt;chr&gt;   
+1 54     Encanto    Str.2G-59 2G-1  Adult Unkno… IC          Formal-wa… Structu…
+2 57     Encanto    Str.2G-59 2G-1  Adult Male   IC          Informal   Structu…
+3 58     Encanto    Str.2G-59 2G-1  Adult Unkno… IC          Informal   Structu…
+4 63     Encanto    Str.2G-10 2G-2  Adult Female IC          chultun    Structu…
+5 65     Encanto    Str.3F-24 3F-1  Adult Unkno… IC          Formal-wa… Structu…
+6 119    Corriental Plaza     7E-6  Adult Male   IC          Informal   &lt;NA&gt;    
+# ℹ 5 more variables: head_orientation &lt;chr&gt;, body_position &lt;chr&gt;,
+#   associated_material_1 &lt;chr&gt;, x &lt;dbl&gt;, y &lt;dbl&gt;</code></pre>
+</div>
+</div>
+<ol start="4" type="1">
+<li>Late Classic Burials</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>lc_burials <span class="ot">&lt;-</span> burials <span class="sc">%&gt;%</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>    time_period <span class="sc">==</span> <span class="st">"LC"</span></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(lc_burials)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 14
+  burial quadrangle structure group age   sex    time_period grave_type location
+  &lt;chr&gt;  &lt;chr&gt;      &lt;chr&gt;     &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;  &lt;chr&gt;       &lt;chr&gt;      &lt;chr&gt;   
+1 45     Camp       Str.4F-26 4F-6  Adult Male   LC          Formal-ro… &lt;NA&gt;    
+2 49     Encanto    Str.2G-59 2G-1  Adult Male   LC          Formal-ro… Structu…
+3 50     Encanto    Str.2G-59 2G-1  Adult Male   LC          Informal   Structu…
+4 52     Encanto    Str.2G-59 2G-1  Adult Male   LC          Informal   Structu…
+5 53     Encanto    Str.2G-59 2G-1  Adult Unkno… LC          Informal   Structu…
+6 55     Encanto    Str.2G-59 2G-1  Child Unkno… LC          Formal-wa… Structu…
+# ℹ 5 more variables: head_orientation &lt;chr&gt;, body_position &lt;chr&gt;,
+#   associated_material_1 &lt;chr&gt;, x &lt;dbl&gt;, y &lt;dbl&gt;</code></pre>
+</div>
+</div>
+</section>
+<section id="re-sampling-the-data" class="level2">
+<h2 class="anchored" data-anchor-id="re-sampling-the-data">Re-sampling the data</h2>
+<p>As stated earlier, the size of this data set is quite small with less than 50 burials in total. Once it was separated into the different periods, this number shrank even more. Now, the four data sets range from 3 to 27 individuals. Considering that 3 individuals are not enough for a kernel density estimation (KDE) that spreads across 16 km^2, I will have to resample the data before creating the KDE. While the <code>resample_heatmap()</code> function from the <code>geoSweepR{}</code> package can resample and create the heatmap at once, the disparity in the data size and the area of the map causes the function to fail. To avoid this, I will manually simulate a more realistic point cloud around the available data before applying a kernel density estimation (KDE) to create the visualization.</p>
+<p>The first step to create the KDE is to simulate a denser, but still realistic, point cloud around the available data. To make this easier to reproduce across the different time periods, I will do this by creating a function called <code>simulate_cloud()</code>. For this function I will need the data from the burials to be stored as sf objects. So once the function is written I will use the <code>sf{}</code> package to convert each period’s data into an sf object before running the new sf object through the function.</p>
+<p>The function created for this part simulates new burial locations based on each period’s data set, applying a random jitter to each point within a specified radius. It uses the original locations as base and generate multiple points per burial. Each new point keeps the same attributes from the original data. The number of points that are generated depends on the number of rows that are available in the original data to ensure that the simulated data set contains around 2,000 points.</p>
+<p>To achieve the simulated data sets, this function first extracts the coordinates and burial information from each original point, then randomizes an angle and a distance to calculate new points. The same burial information is repeated in all the simulations for each point and combined into one data frame, which is then turned into a sf object.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>simulate_cloud <span class="ot">&lt;-</span> <span class="cf">function</span>(data){</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>  radius <span class="ot">&lt;-</span> <span class="dv">30</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>  n_points <span class="ot">&lt;-</span> <span class="fu">floor</span>(<span class="dv">10000</span> <span class="sc">/</span> <span class="fu">nrow</span>(data))</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>  coords <span class="ot">&lt;-</span> <span class="fu">st_coordinates</span>(data)</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>  sim_pt_list <span class="ot">&lt;-</span> <span class="fu">lapply</span>(<span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(data), <span class="cf">function</span>(i) {</span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>      <span class="co"># Original coordinates of each point</span></span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>      x <span class="ot">&lt;-</span> coords[i, <span class="dv">1</span>]</span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>      y <span class="ot">&lt;-</span> coords[i, <span class="dv">2</span>]</span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a>      </span>
+<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a>      <span class="co"># Original attributes associated to each point, except geometry</span></span>
+<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a>      burial_data <span class="ot">&lt;-</span> <span class="fu">st_drop_geometry</span>(data[i, <span class="at">drop =</span> <span class="cn">FALSE</span>])</span>
+<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a>      </span>
+<span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a>      <span class="co"># Randomize angle and distance to simulate the new points</span></span>
+<span id="cb18-17"><a href="#cb18-17" aria-hidden="true" tabindex="-1"></a>      angles <span class="ot">&lt;-</span> <span class="fu">runif</span>(n_points, <span class="dv">0</span>, <span class="dv">2</span> <span class="sc">*</span> pi)</span>
+<span id="cb18-18"><a href="#cb18-18" aria-hidden="true" tabindex="-1"></a>      distances <span class="ot">&lt;-</span> <span class="fu">runif</span>(n_points, <span class="dv">0</span>, <span class="dv">2</span> <span class="sc">*</span> radius)</span>
+<span id="cb18-19"><a href="#cb18-19" aria-hidden="true" tabindex="-1"></a>      </span>
+<span id="cb18-20"><a href="#cb18-20" aria-hidden="true" tabindex="-1"></a>      <span class="co"># Calculate the new simulated coordinates</span></span>
+<span id="cb18-21"><a href="#cb18-21" aria-hidden="true" tabindex="-1"></a>      x_new <span class="ot">&lt;-</span> x <span class="sc">+</span> distances <span class="sc">*</span> <span class="fu">cos</span>(angles)</span>
+<span id="cb18-22"><a href="#cb18-22" aria-hidden="true" tabindex="-1"></a>      y_new <span class="ot">&lt;-</span> y <span class="sc">+</span> distances <span class="sc">*</span> <span class="fu">sin</span>(angles)</span>
+<span id="cb18-23"><a href="#cb18-23" aria-hidden="true" tabindex="-1"></a>      </span>
+<span id="cb18-24"><a href="#cb18-24" aria-hidden="true" tabindex="-1"></a>      <span class="co"># Repeat burial data for each new point without shuffling</span></span>
+<span id="cb18-25"><a href="#cb18-25" aria-hidden="true" tabindex="-1"></a>      sim_data <span class="ot">&lt;-</span> <span class="fu">cbind</span>(burial_data[<span class="fu">rep</span>(<span class="dv">1</span>, n_points), ], <span class="at">x =</span> x_new, <span class="at">y =</span> y_new)</span>
+<span id="cb18-26"><a href="#cb18-26" aria-hidden="true" tabindex="-1"></a>      </span>
+<span id="cb18-27"><a href="#cb18-27" aria-hidden="true" tabindex="-1"></a>      <span class="fu">return</span>(sim_data)</span>
+<span id="cb18-28"><a href="#cb18-28" aria-hidden="true" tabindex="-1"></a>    })</span>
+<span id="cb18-29"><a href="#cb18-29" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb18-30"><a href="#cb18-30" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Combine all simulated points into one data frame</span></span>
+<span id="cb18-31"><a href="#cb18-31" aria-hidden="true" tabindex="-1"></a>  sim_pts <span class="ot">&lt;-</span> <span class="fu">do.call</span>(rbind, sim_pt_list)</span>
+<span id="cb18-32"><a href="#cb18-32" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb18-33"><a href="#cb18-33" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Convert data frame into an sf object with the correct CRS</span></span>
+<span id="cb18-34"><a href="#cb18-34" aria-hidden="true" tabindex="-1"></a>  sim_sf <span class="ot">&lt;-</span> <span class="fu">st_as_sf</span>(sim_pts, <span class="at">coords =</span> <span class="fu">c</span>(<span class="st">"x"</span>, <span class="st">"y"</span>), <span class="at">crs =</span> <span class="fu">st_crs</span>(data))</span>
+<span id="cb18-35"><a href="#cb18-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(sim_sf)</span>
+<span id="cb18-36"><a href="#cb18-36" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol type="1">
+<li>Preclassic Burials</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Converting to sf object</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>pc_sf <span class="ot">&lt;-</span> <span class="fu">st_as_sf</span>(</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>  pc_burials, </span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">coords =</span> <span class="fu">c</span>(<span class="st">"x"</span>, <span class="st">"y"</span>), </span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">crs =</span> <span class="dv">32616</span>)</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Simulating new points</span></span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>pc_simulated <span class="ot">&lt;-</span> <span class="fu">simulate_cloud</span>(pc_sf)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="2" type="1">
+<li>Early Classic Burials</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Converting to sf object</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>ec_sf <span class="ot">&lt;-</span> <span class="fu">st_as_sf</span>(</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>  ec_burials, </span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">coords =</span> <span class="fu">c</span>(<span class="st">"x"</span>, <span class="st">"y"</span>), </span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">crs =</span> <span class="dv">32616</span>)</span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Simulating new points</span></span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>ec_simulated <span class="ot">&lt;-</span> <span class="fu">simulate_cloud</span>(ec_sf)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="3" type="1">
+<li>Intermediate Classic Burials</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Converting to sf object</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>ic_sf <span class="ot">&lt;-</span> <span class="fu">st_as_sf</span>(</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>  ic_burials, </span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">coords =</span> <span class="fu">c</span>(<span class="st">"x"</span>, <span class="st">"y"</span>), </span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">crs =</span> <span class="dv">32616</span>)</span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Simulating new points</span></span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>ic_simulated <span class="ot">&lt;-</span> <span class="fu">simulate_cloud</span>(ic_sf)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="4" type="1">
+<li>Late Classic Burials</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Converting to sf object</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>lc_sf <span class="ot">&lt;-</span> <span class="fu">st_as_sf</span>(</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>  lc_burials, </span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">coords =</span> <span class="fu">c</span>(<span class="st">"x"</span>, <span class="st">"y"</span>), </span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">crs =</span> <span class="dv">32616</span>)</span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Simulating new points</span></span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>lc_simulated <span class="ot">&lt;-</span> <span class="fu">simulate_cloud</span>(lc_sf)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Once that is done, now each data set has around 2,000 points, which is enough to create a kernel density estimation. You can see the summary of the new simulated data sets here:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(pc_simulated)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>    burial           quadrangle         structure            group          
+ Length:9999        Length:9999        Length:9999        Length:9999       
+ Class :character   Class :character   Class :character   Class :character  
+ Mode  :character   Mode  :character   Mode  :character   Mode  :character  
+     age                sex            time_period         grave_type       
+ Length:9999        Length:9999        Length:9999        Length:9999       
+ Class :character   Class :character   Class :character   Class :character  
+ Mode  :character   Mode  :character   Mode  :character   Mode  :character  
+   location         head_orientation   body_position      associated_material_1
+ Length:9999        Length:9999        Length:9999        Length:9999          
+ Class :character   Class :character   Class :character   Class :character     
+ Mode  :character   Mode  :character   Mode  :character   Mode  :character     
+          geometry   
+ POINT        :9999  
+ epsg:32616   :   0  
+ +proj=utm ...:   0  </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(ec_simulated)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>    burial           quadrangle         structure            group          
+ Length:9996        Length:9996        Length:9996        Length:9996       
+ Class :character   Class :character   Class :character   Class :character  
+ Mode  :character   Mode  :character   Mode  :character   Mode  :character  
+     age                sex            time_period         grave_type       
+ Length:9996        Length:9996        Length:9996        Length:9996       
+ Class :character   Class :character   Class :character   Class :character  
+ Mode  :character   Mode  :character   Mode  :character   Mode  :character  
+   location         head_orientation   body_position      associated_material_1
+ Length:9996        Length:9996        Length:9996        Length:9996          
+ Class :character   Class :character   Class :character   Class :character     
+ Mode  :character   Mode  :character   Mode  :character   Mode  :character     
+          geometry   
+ POINT        :9996  
+ epsg:32616   :   0  
+ +proj=utm ...:   0  </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(ic_simulated)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>    burial           quadrangle         structure            group          
+ Length:10000       Length:10000       Length:10000       Length:10000      
+ Class :character   Class :character   Class :character   Class :character  
+ Mode  :character   Mode  :character   Mode  :character   Mode  :character  
+     age                sex            time_period         grave_type       
+ Length:10000       Length:10000       Length:10000       Length:10000      
+ Class :character   Class :character   Class :character   Class :character  
+ Mode  :character   Mode  :character   Mode  :character   Mode  :character  
+   location         head_orientation   body_position      associated_material_1
+ Length:10000       Length:10000       Length:10000       Length:10000         
+ Class :character   Class :character   Class :character   Class :character     
+ Mode  :character   Mode  :character   Mode  :character   Mode  :character     
+          geometry    
+ POINT        :10000  
+ epsg:32616   :    0  
+ +proj=utm ...:    0  </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(lc_simulated)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>    burial           quadrangle         structure            group          
+ Length:9990        Length:9990        Length:9990        Length:9990       
+ Class :character   Class :character   Class :character   Class :character  
+ Mode  :character   Mode  :character   Mode  :character   Mode  :character  
+     age                sex            time_period         grave_type       
+ Length:9990        Length:9990        Length:9990        Length:9990       
+ Class :character   Class :character   Class :character   Class :character  
+ Mode  :character   Mode  :character   Mode  :character   Mode  :character  
+   location         head_orientation   body_position      associated_material_1
+ Length:9990        Length:9990        Length:9990        Length:9990          
+ Class :character   Class :character   Class :character   Class :character     
+ Mode  :character   Mode  :character   Mode  :character   Mode  :character     
+          geometry   
+ POINT        :9990  
+ epsg:32616   :   0  
+ +proj=utm ...:   0  </code></pre>
+</div>
+</div>
+</section>
+<section id="kernel-density-estimation" class="level2">
+<h2 class="anchored" data-anchor-id="kernel-density-estimation">Kernel Density Estimation</h2>
+<p>The previous step resulted in four <code>sf</code> objects with around 2,000 data rows per object. To create the kernel density estimation for each of the four data frames, I created another function. This function uses the <code>spatstat{}</code> package and the <code>terra{}</code> package to convert the data from the simulated results and produce a KDE that can be plotted using <code>base{}</code>. The function is called <code>kde()</code> and has parameters for the data, the extent template, and sigma. The data will correspond to the simulated data from each time period, the extent template will be set to the Tikal map’s extent, and sigma varies to enhance visualization.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>kde <span class="ot">&lt;-</span> <span class="cf">function</span>(data, ext_template, sigma){</span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>  Tikalext <span class="ot">&lt;-</span> <span class="fu">ext</span>(ext_template)</span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>  windowA <span class="ot">&lt;-</span> <span class="fu">owin</span>(</span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">xrange =</span> <span class="fu">c</span>(Tikalext[<span class="dv">1</span>], Tikalext[<span class="dv">2</span>]),</span>
+<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">yrange =</span> <span class="fu">c</span>(Tikalext[<span class="dv">3</span>], Tikalext[<span class="dv">4</span>]))</span>
+<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb31-9"><a href="#cb31-9" aria-hidden="true" tabindex="-1"></a>  coordsA <span class="ot">&lt;-</span> <span class="fu">st_coordinates</span>(data)</span>
+<span id="cb31-10"><a href="#cb31-10" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb31-11"><a href="#cb31-11" aria-hidden="true" tabindex="-1"></a>  ppp_data <span class="ot">&lt;-</span> <span class="fu">ppp</span>(<span class="at">x =</span> coordsA[,<span class="dv">1</span>], <span class="at">y =</span> coordsA[,<span class="dv">2</span>], <span class="at">window =</span> windowA)</span>
+<span id="cb31-12"><a href="#cb31-12" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb31-13"><a href="#cb31-13" aria-hidden="true" tabindex="-1"></a>  kde_data <span class="ot">&lt;-</span> <span class="fu">density</span>(ppp_data, <span class="at">sigma =</span> sigma)</span>
+<span id="cb31-14"><a href="#cb31-14" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb31-15"><a href="#cb31-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(kde_data)</span>
+<span id="cb31-16"><a href="#cb31-16" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol type="1">
+<li>Preclassic KDE</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>pc_kde <span class="ot">&lt;-</span> <span class="fu">kde</span>(pc_simulated, <span class="at">ext_template =</span> Tikal, <span class="at">sigma =</span> <span class="dv">300</span>)</span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>pc_kde_plot <span class="ot">&lt;-</span> <span class="fu">plot</span>(pc_kde, <span class="at">main =</span> <span class="st">"Preclassic KDE"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="CreativeVisualizationProject_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<ol start="2" type="1">
+<li>Early Classic KDE</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>ec_kde <span class="ot">&lt;-</span> <span class="fu">kde</span>(ec_simulated, <span class="at">ext_template =</span> Tikal, <span class="at">sigma =</span> <span class="dv">300</span>)</span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>ec_kde_plot <span class="ot">&lt;-</span> <span class="fu">plot</span>(ec_kde, <span class="at">main =</span> <span class="st">"Early Classic KDE"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="CreativeVisualizationProject_files/figure-html/unnamed-chunk-17-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<ol start="3" type="1">
+<li>Intermediate Classic KDE</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>ic_kde <span class="ot">&lt;-</span> <span class="fu">kde</span>(ic_simulated, <span class="at">ext_template =</span> Tikal, <span class="at">sigma =</span> <span class="dv">300</span>)</span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>ic_kde_plot <span class="ot">&lt;-</span> <span class="fu">plot</span>(ic_kde, <span class="at">main =</span> <span class="st">"Intermediate Classic KDE"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="CreativeVisualizationProject_files/figure-html/unnamed-chunk-18-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<ol start="4" type="1">
+<li>Late Classic KDE</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>lc_kde <span class="ot">&lt;-</span> <span class="fu">kde</span>(lc_simulated, <span class="at">ext_template =</span> Tikal, <span class="at">sigma =</span> <span class="dv">300</span>)</span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>lc_kde_plot <span class="ot">&lt;-</span> <span class="fu">plot</span>(lc_kde, <span class="at">main =</span> <span class="st">"Late Classic KDE"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="CreativeVisualizationProject_files/figure-html/unnamed-chunk-19-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="adding-the-basemap" class="level2">
+<h2 class="anchored" data-anchor-id="adding-the-basemap">Adding the Basemap</h2>
+<p>Now that we have kernel density estimations for each time period, we need to combine those estimations to the Tikal basemap. To combine the two maps (the Tikal basemap and the KDE for each period) I first prepared the Tikal map to work in <code>ggplot2{}</code>. I used the packages <code>terra{}</code>, <code>grid{}</code>, and <code>viridis{}</code> to prepare and combine the maps. I also converted the KDE raster files for each time period into data frames using <code>as.data.frame()</code>.</p>
+<p>This was the code to prepare the Tikal map.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>Tikal_matrix <span class="ot">&lt;-</span> <span class="fu">as.raster</span>(Tikal[[<span class="dv">1</span>]])</span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>Tikal_extent <span class="ot">&lt;-</span> <span class="fu">ext</span>(Tikal)</span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a>Tikal_grob <span class="ot">&lt;-</span> <span class="fu">rasterGrob</span>(</span>
+<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a>  Tikal_matrix,</span>
+<span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">width =</span> <span class="fu">unit</span>(<span class="dv">1</span>, <span class="st">"npc"</span>),</span>
+<span id="cb36-8"><a href="#cb36-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">height =</span> <span class="fu">unit</span>(<span class="dv">1</span>, <span class="st">"npc"</span>),</span>
+<span id="cb36-9"><a href="#cb36-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">interpolate =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol type="1">
+<li>Preclassic</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>pc_kde_df <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(pc_kde)</span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotation_custom</span>(</span>
+<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a>    Tikal_grob,</span>
+<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">xmin =</span> Tikal_extent[<span class="dv">1</span>], <span class="at">xmax =</span> Tikal_extent[<span class="dv">2</span>],</span>
+<span id="cb37-7"><a href="#cb37-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">ymin =</span> Tikal_extent[<span class="dv">3</span>], <span class="at">ymax =</span> Tikal_extent[<span class="dv">4</span>]</span>
+<span id="cb37-8"><a href="#cb37-8" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb37-9"><a href="#cb37-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_raster</span>(</span>
+<span id="cb37-10"><a href="#cb37-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> pc_kde_df,</span>
+<span id="cb37-11"><a href="#cb37-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y, <span class="at">fill =</span> value),</span>
+<span id="cb37-12"><a href="#cb37-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">alpha =</span> <span class="fl">0.6</span></span>
+<span id="cb37-13"><a href="#cb37-13" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb37-14"><a href="#cb37-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_viridis_c</span>(<span class="at">option =</span> <span class="st">"D"</span>) <span class="sc">+</span></span>
+<span id="cb37-15"><a href="#cb37-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_fixed</span>() <span class="sc">+</span></span>
+<span id="cb37-16"><a href="#cb37-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Preclassic Burial KDE"</span>) <span class="sc">+</span></span>
+<span id="cb37-17"><a href="#cb37-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="CreativeVisualizationProject_files/figure-html/unnamed-chunk-21-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<ol start="2" type="1">
+<li>Early Classic</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>ec_kde_df <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(ec_kde)</span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotation_custom</span>(</span>
+<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a>    Tikal_grob,</span>
+<span id="cb38-6"><a href="#cb38-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">xmin =</span> Tikal_extent[<span class="dv">1</span>], <span class="at">xmax =</span> Tikal_extent[<span class="dv">2</span>],</span>
+<span id="cb38-7"><a href="#cb38-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">ymin =</span> Tikal_extent[<span class="dv">3</span>], <span class="at">ymax =</span> Tikal_extent[<span class="dv">4</span>]</span>
+<span id="cb38-8"><a href="#cb38-8" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb38-9"><a href="#cb38-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_raster</span>(</span>
+<span id="cb38-10"><a href="#cb38-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> ec_kde_df,</span>
+<span id="cb38-11"><a href="#cb38-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y, <span class="at">fill =</span> value),</span>
+<span id="cb38-12"><a href="#cb38-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">alpha =</span> <span class="fl">0.6</span></span>
+<span id="cb38-13"><a href="#cb38-13" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb38-14"><a href="#cb38-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_viridis_c</span>(<span class="at">option =</span> <span class="st">"D"</span>) <span class="sc">+</span></span>
+<span id="cb38-15"><a href="#cb38-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_fixed</span>() <span class="sc">+</span></span>
+<span id="cb38-16"><a href="#cb38-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Early Classic Burial KDE"</span>) <span class="sc">+</span></span>
+<span id="cb38-17"><a href="#cb38-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="CreativeVisualizationProject_files/figure-html/unnamed-chunk-22-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<ol start="3" type="1">
+<li>Intermediate Classic</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>ic_kde_df <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(ic_kde)</span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotation_custom</span>(</span>
+<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a>    Tikal_grob,</span>
+<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">xmin =</span> Tikal_extent[<span class="dv">1</span>], <span class="at">xmax =</span> Tikal_extent[<span class="dv">2</span>],</span>
+<span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">ymin =</span> Tikal_extent[<span class="dv">3</span>], <span class="at">ymax =</span> Tikal_extent[<span class="dv">4</span>]</span>
+<span id="cb39-8"><a href="#cb39-8" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb39-9"><a href="#cb39-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_raster</span>(</span>
+<span id="cb39-10"><a href="#cb39-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> ic_kde_df,</span>
+<span id="cb39-11"><a href="#cb39-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y, <span class="at">fill =</span> value),</span>
+<span id="cb39-12"><a href="#cb39-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">alpha =</span> <span class="fl">0.6</span></span>
+<span id="cb39-13"><a href="#cb39-13" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb39-14"><a href="#cb39-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_viridis_c</span>(<span class="at">option =</span> <span class="st">"D"</span>) <span class="sc">+</span></span>
+<span id="cb39-15"><a href="#cb39-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_fixed</span>() <span class="sc">+</span></span>
+<span id="cb39-16"><a href="#cb39-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Intermediate Classic Burial KDE"</span>) <span class="sc">+</span></span>
+<span id="cb39-17"><a href="#cb39-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="CreativeVisualizationProject_files/figure-html/unnamed-chunk-23-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<ol start="4" type="1">
+<li>Late Classic</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>lc_kde_df <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(lc_kde)</span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotation_custom</span>(</span>
+<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a>    Tikal_grob,</span>
+<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">xmin =</span> Tikal_extent[<span class="dv">1</span>], <span class="at">xmax =</span> Tikal_extent[<span class="dv">2</span>],</span>
+<span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">ymin =</span> Tikal_extent[<span class="dv">3</span>], <span class="at">ymax =</span> Tikal_extent[<span class="dv">4</span>]</span>
+<span id="cb40-8"><a href="#cb40-8" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb40-9"><a href="#cb40-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_raster</span>(</span>
+<span id="cb40-10"><a href="#cb40-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> lc_kde_df,</span>
+<span id="cb40-11"><a href="#cb40-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y, <span class="at">fill =</span> value),</span>
+<span id="cb40-12"><a href="#cb40-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">alpha =</span> <span class="fl">0.6</span></span>
+<span id="cb40-13"><a href="#cb40-13" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb40-14"><a href="#cb40-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_viridis_c</span>(<span class="at">option =</span> <span class="st">"D"</span>) <span class="sc">+</span></span>
+<span id="cb40-15"><a href="#cb40-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_fixed</span>() <span class="sc">+</span></span>
+<span id="cb40-16"><a href="#cb40-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Late Classic Burial KDE"</span>) <span class="sc">+</span></span>
+<span id="cb40-17"><a href="#cb40-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="CreativeVisualizationProject_files/figure-html/unnamed-chunk-24-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

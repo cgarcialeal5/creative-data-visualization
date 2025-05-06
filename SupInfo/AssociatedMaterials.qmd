@@ -1,0 +1,125 @@
+---
+title: "Associated Materials"
+format: html
+editor: visual
+---
+
+-   A: Single vessel
+
+    -   A1: Single vessel near the lower extremities
+
+        -   A1a: Single plate near lower extremities
+
+        -   A1b: Single bowl near lower extremities
+
+        -   A1c: Single vase near lower extremities
+
+        -   A1d: Sherd near lower extremities
+
+    -   A2: Single vessel by skull
+
+    -   A3: Multiple sherds from same vessel
+
+        -   A3a: One sherd by head, two by feet
+
+-   B: Two vessels
+
+    -   B1: Vessels near feet
+
+        -   B1a: Bowls set lip-to-lip
+
+        -   B1b: Bowls set upright
+
+        -   B1c: Incomplete bowl and vase
+
+    -   B2: One vessel by head, one by feet
+
+        -   B2a: Bowl near head, vase near feet
+
+        -   B2b: Plate upright beneath head, vase near feet
+
+-   C: Three Vessels
+
+    -   C1: Two vessels near head, one near feet
+
+        -   C1a: Bowl, hole in base inverted beneath head; vase; plate
+
+        -   C1b: Two bowls, one inverted beneath head; vase
+
+        -   C1c: Two bowls, head in one; vase
+
+        -   C1d: Two bowls; vase; none under head
+
+        -   C1e: Two vases; bowl; none under head
+
+        -   C1f: Three bowls; one inverted beneath head
+
+    -   C2: Three vessels near head
+
+        -   C2a: Bowl, hole in base inverted beneath head; vase; plate
+
+        -   C2b: Two bowls, one with hole in base inverted beneath head; vase
+
+        -   C2c: Two bowls, one inverted beneath head; vase
+
+        -   C2d: Plate, inverted beneath head; bowl; vase
+
+        -   C2e: Bowl over head; sherds from two other vessels
+
+    -   C3: One vessel near head, two near feet
+
+        -   C3a: Bowl, hole in base inverted beneath head; vase; plate
+
+    -   C4: Three vessels near feet
+
+        -   C4a: Bowl; vase; plate
+
+        -   C4b: Plate; vase; incomplete bowl
+
+-   D: Six Vessels
+
+    -   D1: Distributed around body
+
+    -   D2: Skeleton in urn covered by lid; four other vessels distributed around body
+
+-   E: Objects other than Vessels
+
+    -   E1: Extra skull
+
+    -   E2: Spindle whorl
+
+    -   E3: Two elongate bifaces
+
+    -   E4: Chert flake in mouth
+
+    -   E5: Pottery drum and figurine whistle
+
+    -   E6: Cut shell ornaments
+
+        -   E6a: Under legs and head
+
+        -   E6b: Fragment in mouth
+
+    -   E7: Animal bone
+
+        -   E7a: Placement unknown
+
+        -   E7b: Placed in mouth
+
+    -   E8: Bead
+
+        -   E8a: Clay bead
+
+        -   E8b: Jade bead in mouth
+
+    -   E9: Other
+
+-   F: Four vessels
+
+    -   F1: Two near head, two near feet head in it
+
+        -   F1a: Plate; vase and two bowls; one on its side with
+
+    -   F2: Vessels near head
+
+        -   F2a: Vase; three bowls, one with hole in base inverted beneath head
